@@ -31,8 +31,8 @@ class FeatureExtractor:
         # Extract Features
         feature = self.model.predict(x)[0]
         return feature / np.linalg.norm(feature)
-    
-def image_retrieval():
+
+if __name__ == "__main__":
     # Iterate through images (Change the path based on your image location)
     all_features = []
     fe =FeatureExtractor()
@@ -74,6 +74,3 @@ def image_retrieval():
         plt.imshow(Image.open(score[1]))
     fig.tight_layout()
     plt.show()
-
-if __name__ == "__main__":
-    image_retrieval()
